@@ -1,38 +1,109 @@
+* {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
-}
+  color: lightgray;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.compass-clock {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  transition: all 0.5s;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.item {
+  position: absolute;
+  top: -1rem;
+  text-align: right;
+  line-height: 2rem;
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+.item.active {
+  opacity: 1;
+  font-size: 1.2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.month {
+  width: 200px;
+  right: -100px;
+  z-index: 10;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.week {
+  width: 360px;
+  right: -180px;
+  z-index: 9;
+}
+
+.day {
+  width: 480px;
+  right: -240px
+}
+
+.hour {
+  width: 600px;
+  height: 300px;
+}
+
+.minute {
+  width: 800px;
+  height: -400px;
+}
+
+.second {
+  width: 960px;
+  height: -480px;
+}
+
+
+.message {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  text-align: left;
+  line-height: rem;
+  width: 300px;
+}
+
+.message span {
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.message span:hover {
+  opacity: 1;
+}
+
+.current-month {
+  position: absolute;
+  left: 2rem;
+  top: 6rem;
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.current-month:hover {
+  opacity: 1;
 }
